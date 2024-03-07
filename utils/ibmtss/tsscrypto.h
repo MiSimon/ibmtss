@@ -47,13 +47,6 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#ifndef TPM_TSS_NORSA
-#include <openssl/rsa.h>
-#endif
-#ifndef TPM_TSS_NOECC
-#include <openssl/ec.h>
-#endif
-
 #include <ibmtss/tss.h>
 
 #ifdef __cplusplus
@@ -137,11 +130,6 @@ extern "C" {
     /* deprecated */
 #ifndef TPM_TSS_NODEPRECATED
     LIB_EXPORT
-    TPM_RC TSS_RSAGeneratePublicToken(RSA **rsa_pub_key,		/* freed by caller */
-				      const unsigned char *narr,   	/* public modulus */
-				      uint32_t nbytes,
-				      const unsigned char *earr,   	/* public exponent */
-				      uint32_t ebytes);
 #endif /* TPM_TSS_NODEPRECATED */
 
 
